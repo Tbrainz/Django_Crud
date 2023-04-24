@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'js/css/style.css' %}" />
+  </head>
+  <body>
+    <h2 style="text-align: center">List of all Members</h2>
+    {% if model %}
+    <table border="1" style="width: 50%; margin: auto">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Mobile</td>
+          <td>Age</td>
+          <td>Status</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for profile in model %}
+
+        <tr>
+          <td>{{profile.fullname}}</td>
+          <td>{{profile.mobile}}</td>
+          <td>{{profile.age}}</td>
+          <td>{{profile.status}}</td>
+          <td class="action">
+            <a href="{% url 'edit' profile.id %}"><button>Edit</button></a>
+            <form action="{% url 'delete' profile.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>There are no members</p>
+    {% endif %}
+    <div class="links">
+      <a href="{% url 'home' %}" style="text-align: center">Add Profile</a>
+    </div>
+  </body>
+</html>

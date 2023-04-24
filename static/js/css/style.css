@@ -1,0 +1,65 @@
+button {
+  color: white;
+  padding: 4px 5px;
+  background-color: rgba(180, 39, 166, 0.5);
+}
+
+button:hover {
+  background-color: rgba(180, 39, 166);
+}
+
+.container {
+  width: 60%;
+  box-shadow: 0 3px 3px black;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px 20px 30px;
+  background-color: rgba(35, 112, 139, 0.1);
+}
+.container h2 {
+  text-align: center;
+}
+.links {
+  margin-top: 30px;
+  text-align: center;
+}
+form {
+  width: 100%;
+  margin: auto;
+}
+
+p {
+  display: flex;
+}
+
+input {
+  width: 70%;
+}
+
+label {
+  width: 30%;
+}
+
+.btn {
+  width: 80%;
+  margin-left: 50px;
+  background-color: rgb(13, 134, 148, 0.7);
+  border: none;
+}
+
+.btn:hover {
+  color: rgb(12, 5, 5);
+  background-color: rgb(13, 134, 148);
+}
+
+table {
+  text-align: center;
+  background-color: rgba(255, 192, 203, 0.2);
+}
+thead {
+  font-weight: 600;
+}
+
+.action {
+  display: flex;
+}
